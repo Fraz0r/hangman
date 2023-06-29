@@ -11,3 +11,9 @@ export function getIncorrect(answer: TAnswer, inputChars: TInputChars) {
 export function getNumIncorrect(answer: TAnswer, inputChars: TInputChars) {
   return getIncorrect(answer, inputChars).length;
 }
+
+export function inputValid(answer: TAnswer, inputChars: TInputChars) {
+  const answerChar = answer.replace(/\s/, '').toLowerCase().split('');
+
+  return answerChar.filter((c) => inputChars.includes(c)).length === answerChar.length;
+}

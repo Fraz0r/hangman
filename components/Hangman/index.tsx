@@ -5,6 +5,11 @@ import { Button, GestureResponderEvent, StyleSheet } from 'react-native';
 import { Text, View } from '../Themed';
 import Board from "./Board";
 
+// TODO: Get rid of un-used default components/files
+// TODO: Mock API return for random word/phrase
+// TODO: Add hints to Words in
+// TODO: Theme Color Refactor, at least in ../constants
+
 interface LandingProps {
   onStart: (e: GestureResponderEvent) => void;
 }
@@ -25,10 +30,6 @@ export default function Hangman() {
 
   const onStart = useCallback(() => setIsPlaying(true), []);
   const onQuit = useCallback(() => setIsPlaying(false), []);
-  // TODO: Add a non-app keyboard
-  // TODO: Mock API return for random word/phrase
-  // TODO: Be able to pass styles to Scene (and similar)
-  // TODO: Add hints to Words in
 
   return (
     <View>

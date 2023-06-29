@@ -1,11 +1,10 @@
 import { Text, useThemeColor, View } from "../Themed";
 import * as React from "react";
 import { StyleSheet } from "react-native";
-import { IGameInput } from "../../types/Game";
+import { IGameInput, TValidInputChar } from "../../types/Game";
 
 interface LetterProps {
-  // TODO: This could be locked down to actual chars to tighten typings
-  value: string;
+  value: TValidInputChar;
   active: boolean;
 }
 
