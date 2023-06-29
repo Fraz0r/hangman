@@ -5,11 +5,6 @@ import { Button, GestureResponderEvent, StyleSheet } from 'react-native';
 import { Text, View } from '../Themed';
 import Board from "./Board";
 
-// TODO: Get rid of un-used default components/files
-// TODO: Mock API return for random word/phrase
-// TODO: Add hints to Words in
-// TODO: Theme Color Refactor, at least in ../constants
-
 interface LandingProps {
   onStart: (e: GestureResponderEvent) => void;
 }

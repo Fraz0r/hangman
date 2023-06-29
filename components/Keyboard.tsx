@@ -5,7 +5,7 @@ import { Pressable, StyleSheet } from "react-native";
 import { IKeyboardLayout } from "../types/Game";
 import { DEFAULT_KEYBOARD_LAYOUT } from "../constants/Game";
 
-import { Text, View } from "./Themed";
+import { Text, useThemeColor, View } from "./Themed";
 
 interface KeyProps {
   value: string;
@@ -13,11 +13,14 @@ interface KeyProps {
 }
 
 function Key({ onPress, value }: KeyProps) {
+  const textColor = useThemeColor({}, 'text');
+  const bgColor = useThemeColor({}, 'background');
+
   const callback = useCallback(() => onPress(value), [onPress, value]);
 
   return (
     <Pressable onPress={ callback }>
-      <Text style={ styles.key }>{ value }</Text>
+      <Text style={ { ...styles.key, color: textColor, backgroundColor: bgColor } }>{ value }</Text>
     </Pressable>
   );
 }
@@ -52,13 +55,15 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: 5,
+    marginBottom: 9,
   },
   key: {
     paddingVertical: 2,
-    width: 20,
+    width: 25,
     textAlign: 'center',
     backgroundColor: 'pink',
     marginHorizontal: 4,
+    borderRadius: 5,
+    borderWidth: 1,
   },
 });

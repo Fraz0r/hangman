@@ -6,7 +6,8 @@ export default function AboutScreen() {
     <View style={ styles.container }>
       <Text style={ styles.title }>About</Text>
       <View style={ styles.separator } lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Text>This is a demo</Text>
+      <Text>This is by no means a production application. The intent of this project is to drive conversations during
+        interview processes.</Text>
     </View>
   );
 }

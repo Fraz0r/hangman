@@ -13,11 +13,13 @@ export default function LetterBank({ answer, inputChars }: IncorrectTrackerProps
 
   return (
     <View style={ styles.container }>
-      <Text>Incorrect: { incorrect.join(', ') }</Text>
+      <Text>Incorrect: { incorrect.map(c => c.toUpperCase()).sort().join(', ') }</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    marginTop: 15,
+  },
 });
